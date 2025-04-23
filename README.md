@@ -21,8 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 2. 克隆本仓库
 
 ```bash
-git clone https://github.com/yourusername/rustlings-local-grader.git
-cd rustlings-local-grader
+git clone https://github.com/yourusername/learning-tools.git
 ```
 
 3. 编译项目
