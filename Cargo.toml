@@ -1,0 +1,20 @@
+[package]
+name = "rustlings-local-grader"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "本地Rustlings练习评测工具"
+
+[dependencies]
+anyhow = "1.0.75"
+clap = { version = "4.4.6", features = ["derive"] }
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.107"
+tokio = { version = "1.32.0", features = ["full"] }
+colored = "2.0.4"
+indicatif = "0.17"
+walkdir = "2.3.3"
+
+[[bin]]
+name = "rustlings-grader"
+path = "src/main.rs"
