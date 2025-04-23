@@ -66,14 +66,6 @@ cargo run -- grade-single -f /path/to/rustlings/exercises/variables1.rs -v
 - 失败的练习数量
 - 总评测耗时
 
-## 与 exam-grading 的区别
-
-与 exam-grading 项目相比，本工具的主要区别是：
-
-1. 完全本地化：无需依赖 GitHub Actions，可以在本地环境中运行
-2. 简化流程：直接编译和运行测试，无需复杂的配置
-3. 更友好的界面：提供进度条和彩色输出，提升用户体验
-4. 专注于 Rustlings：专门为 Rustlings 练习设计，更加轻量和高效
 
 ## 贡献
 
