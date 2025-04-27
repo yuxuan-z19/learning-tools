@@ -140,9 +140,21 @@ async fn main() -> Result<()> {
     };
     println!("{}: {:.2}%", "通过率".green(), pass_rate);
     
+    // 显示失败的练习
+    if result.statistics.total_failures > 0 {
+        println!("");
+        println!("{}", "失败的练习:".red().bold());
+        for exercise in result.exercises.iter() {
+            if !exercise.result {
+                println!("  {}", exercise.name.red());
+            }
+        }
+    }
+    
     // 将结果保存到文件
     let json_result = serde_json::to_string_pretty(&result)?;
     fs::write("rustlings_result.json", json_result)?;
+    println!("");
     println!("{}", "评测结果已保存到 rustlings_result.json".blue());
     
     Ok(())
