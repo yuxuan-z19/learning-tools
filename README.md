@@ -65,7 +65,6 @@ cargo run -- grade-single -f /path/to/rustlings/exercises/variables1.rs -v
 - 失败的练习数量
 - 总评测耗时
 
-
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
