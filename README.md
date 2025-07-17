@@ -66,8 +66,8 @@ cargo build --release
 ## 使用方法
 
 ### 1. 配置课程
+请先将练习仓库 fork 到您自己的 GitHub 账户，然后使用您自己的仓库链接进行配置，例如您fork后的rustlings仓库链接为https://github.com/user/rustlings.git 使用 `learn` 命令来添加新的课程仓库：
 
-使用 `learn` 命令来添加新的课程仓库：
 
 ```bash
 # 配置 learning-lm-rs 课程
