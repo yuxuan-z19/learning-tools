@@ -27,8 +27,12 @@
 
 1. **Rust 环境**（必需）
 ```bash
+# Ubuntu/Debian
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 source ~/.cargo/env
+
+sudo apt install rustup
 ```
 
 2. **Git**（必需）
@@ -67,13 +71,13 @@ cargo build --release
 
 ```bash
 # 配置 learning-lm-rs 课程
-cargo xtask learn --course learning-lm-rs --submodule https://github.com/user/learning-lm-rs.git
+cargo xtask learn learning-lm-rs --submodule https://github.com/user/learning-lm-rs.git
 
 # 配置 learning-cxx 课程
-cargo xtask learn --course learning-cxx --submodule https://github.com/user/learning-cxx.git
+cargo xtask learn learning-cxx --submodule https://github.com/user/learning-cxx.git
 
 # 配置 rustlings 课程
-cargo xtask learn --course rustlings --submodule https://github.com/user/rustlings.git
+cargo xtask learn rustlings --submodule https://github.com/user/rustlings.git
 ```
 
 ### 2. 评测练习
@@ -96,12 +100,7 @@ cargo xtask eval --course learning-lm-rs
 cargo xtask eval --path ./my-exercises --verbose
 ```
 
-### 3. 环境配置（开发中）
 
-```bash
-# 安装指定开发环境
-cargo xtask setup <环境名称>
-```
 
 ## 评测结果
 
@@ -159,27 +158,7 @@ learning-tools/
 └── eval_result.json      # 评测结果文件
 ```
 
-## 扩展新课程类型
 
-要添加对新课程类型的支持，请修改 `xtask/src/eval.rs` 文件：
-
-1. 添加新的评测函数：
-```rust
-fn eval_my_course(&self, course_path: &Path) -> Result<(Vec<ExerciseResult>, usize, usize, usize)> {
-    // 实现你的评测逻辑
-    // 返回 (练习结果列表, 成功数, 失败数, 总数)
-}
-```
-
-2. 在 `run_eval` 函数中添加新的分支：
-```rust
-let (results, succeeds, failures, exercations) = match course_name {
-    "learning-lm-rs" => self.eval_learning_lm(&path)?,
-    "learning-cxx" => self.eval_learning_cxx(&path)?,
-    "my-new-course" => self.eval_my_course(&path)?, // 添加这行
-    _ => self.eval_rustlings(&path)?
-};
-```
 
 ## 常见问题
 
